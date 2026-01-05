@@ -14,21 +14,29 @@ import {
   Check,
   Sparkles,
   Bot,
-  Scissors,
   Calendar,
-  Bell,
   ShieldCheck,
   MessageSquare,
   TrendingUp,
   Star,
   Users,
   Plus,
-  Minus
+  Minus,
+  BookX,
+  Hourglass,
+  CalendarOff,
+  Cpu,
+  BellRing,
+  Coins,
+  Lock,
+  Crown,
+  Layout
 } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "244923683560";
-const WHATSAPP_MESSAGE = "Olá! Quero começar o teste grátis de 7 dias da Fluxora para o meu salão/barbearia.";
-const CONVERSION_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+const WHATSAPP_MESSAGE = "Olá! Quero tirar uma dúvida sobre a Fluxora.";
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+const FORM_URL = "https://forms.gle/FCf47e32RiNTDi8cA";
 
 const Badge = ({ children, className = "" }: { children?: React.ReactNode, className?: string }) => (
   <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[10px] sm:text-xs font-black uppercase tracking-[0.12em] text-emerald-600 ${className}`}>
@@ -213,7 +221,7 @@ const App: React.FC = () => {
               <a href="#problema" onClick={(e) => smoothScroll(e, '#problema')} className={`${scrolled ? 'text-slate-600' : 'text-white/80'} hover:text-emerald-500 transition-colors focus:outline-none focus-visible:text-emerald-500`}>O Problema</a>
               <a href="#solucao" onClick={(e) => smoothScroll(e, '#solucao')} className={`${scrolled ? 'text-slate-600' : 'text-white/80'} hover:text-emerald-500 transition-colors focus:outline-none focus-visible:text-emerald-500`}>Soluções</a>
               <a href="#planos" onClick={(e) => smoothScroll(e, '#planos')} className={`${scrolled ? 'text-slate-600' : 'text-white/80'} hover:text-emerald-500 transition-colors focus:outline-none focus-visible:text-emerald-500`}>Preços</a>
-              <Button variant={scrolled ? 'primary' : 'white'} className="py-2.5 px-6 text-xs uppercase" href={CONVERSION_URL}>Teste Grátis</Button>
+              <Button variant={scrolled ? 'primary' : 'white'} className="py-2.5 px-6 text-xs uppercase" href={FORM_URL}>Teste Grátis</Button>
             </nav>
 
             <button 
@@ -248,7 +256,7 @@ const App: React.FC = () => {
                 Automatize marcações no WhatsApp, lembretes e atendimento 24/7 sem complicações técnicas.
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 justify-center md:justify-start">
-                <Button variant="emerald" className="group px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-lg" href={CONVERSION_URL}>
+                <Button variant="emerald" className="group px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-lg" href={FORM_URL}>
                   Começar Teste Grátis
                   <ArrowRight size={18} className="sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                 </Button>
@@ -301,9 +309,9 @@ const App: React.FC = () => {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {[
-                { t: "Marcações em Papel", d: "Cadernos perdem-se, rasgam-se e criam confusão de horários.", i: <Scissors className="text-red-500" />, c: "bg-red-50" },
-                { t: "Fila de WhatsApp", d: "Responder manualmente a cada cliente gasta o seu tempo de produção.", i: <MessageSquare className="text-blue-500" />, c: "bg-blue-50" },
-                { t: "Esquecimentos", d: "Clientes que marcam e não aparecem porque não foram lembrados.", i: <Bell className="text-orange-500" />, c: "bg-orange-50" },
+                { t: "Marcações em Papel", d: "Cadernos perdem-se, rasgam-se e criam confusão de horários.", i: <BookX className="text-red-500" />, c: "bg-red-50" },
+                { t: "Fila de WhatsApp", d: "Responder manualmente a cada cliente gasta o seu tempo de produção.", i: <Hourglass className="text-blue-500" />, c: "bg-blue-50" },
+                { t: "Esquecimentos", d: "Clientes que marcam e não aparecem porque não foram lembrados.", i: <CalendarOff className="text-orange-500" />, c: "bg-orange-50" },
               ].map((item, i) => (
                 <article key={i} className="group p-8 sm:p-10 rounded-3xl sm:rounded-[3rem] border border-slate-100 hover:border-slate-300 hover:shadow-xl transition-all duration-500">
                   <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl ${item.c} flex items-center justify-center mb-6 sm:mb-8 group-hover:scale-105 transition-transform`}>
@@ -328,42 +336,42 @@ const App: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 auto-rows-auto md:auto-rows-[240px]">
               <article className="md:col-span-8 bg-gradient-to-br from-emerald-600 to-emerald-800 rounded-3xl sm:rounded-[3rem] p-8 sm:p-10 relative overflow-hidden group min-h-[200px]">
                 <div className="relative z-10 flex flex-col h-full justify-between">
-                  <Bot size={32} className="mb-4 sm:w-10 sm:h-10" aria-hidden="true" />
+                  <Cpu size={32} className="mb-4 sm:w-10 sm:h-10 text-emerald-300" aria-hidden="true" />
                   <div>
                     <h3 className="text-2xl sm:text-3xl font-black mb-2">Atendimento 24/7</h3>
-                    <p className="text-emerald-50/80 text-sm sm:text-base font-medium max-w-md">O robô responde preços, envia fotos e faz marcações mesmo enquanto você dorme ou atende um cliente.</p>
+                    <p className="text-emerald-50/80 text-sm sm:text-base font-medium max-w-md">O robô inteligente responde preços, envia fotos e faz marcações mesmo enquanto você dorme ou atende um cliente.</p>
                   </div>
                 </div>
                 <div className="absolute right-[-5%] bottom-[-10%] opacity-10 group-hover:scale-110 transition-transform duration-700 pointer-events-none" aria-hidden="true">
-                  <MessageSquare size={180} className="md:w-[300px] md:h-[300px]" strokeWidth={1} />
+                  <Bot size={180} className="md:w-[300px] md:h-[300px]" strokeWidth={1} />
                 </div>
               </article>
 
               <article className="md:col-span-4 bg-white/5 border border-white/10 rounded-3xl sm:rounded-[3rem] p-8 sm:p-10 flex flex-col justify-between hover:bg-white/10 transition-colors min-h-[180px]">
-                <Bell className="text-orange-400 mb-4 sm:mb-0 sm:w-10 sm:h-10" size={32} aria-hidden="true" />
+                <BellRing className="text-orange-400 mb-4 sm:mb-0 sm:w-10 sm:h-10" size={32} aria-hidden="true" />
                 <div>
                   <h3 className="text-xl sm:text-2xl font-black mb-2">Zero Faltas</h3>
-                  <p className="text-slate-400 text-sm font-medium">Lembretes automáticos por WhatsApp reduzem faltas em até 45%.</p>
+                  <p className="text-slate-400 text-sm font-medium">Lembretes automáticos por WhatsApp reduzem faltas em até 45% com avisos prévios.</p>
                 </div>
               </article>
 
               <article className="md:col-span-4 bg-white/5 border border-white/10 rounded-3xl sm:rounded-[3rem] p-8 sm:p-10 flex flex-col justify-between hover:bg-white/10 transition-colors min-h-[180px]">
-                <TrendingUp className="text-blue-400 mb-4 sm:mb-0 sm:w-10 sm:h-10" size={32} aria-hidden="true" />
+                <Coins className="text-blue-400 mb-4 sm:mb-0 sm:w-10 sm:h-10" size={32} aria-hidden="true" />
                 <div>
                   <h3 className="text-xl sm:text-2xl font-black mb-2">Mais Receita</h3>
-                  <p className="text-slate-400 text-sm font-medium">Capture clientes no momento exato do interesse, sem deixá-los à espera.</p>
+                  <p className="text-slate-400 text-sm font-medium">Converta leads instantaneamente e aumente seu faturamento sem esforço extra.</p>
                 </div>
               </article>
 
               <article className="md:col-span-8 bg-slate-800 border border-slate-700 rounded-3xl sm:rounded-[3rem] p-8 sm:p-10 relative overflow-hidden group min-h-[200px]">
                 <div className="relative z-10 flex flex-col h-full justify-between">
                   <div className="flex gap-4 mb-4 sm:mb-0">
-                    <CheckCheck size={32} className="text-emerald-400 sm:w-10 sm:h-10" aria-hidden="true" />
-                    <ShieldCheck size={32} className="text-blue-400 sm:w-10 sm:h-10" aria-hidden="true" />
+                    <Lock size={32} className="text-emerald-400 sm:w-10 sm:h-10" aria-hidden="true" />
+                    <Layout size={32} className="text-blue-400 sm:w-10 sm:h-10" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="text-2xl sm:text-3xl font-black mb-2">Simples e Seguro</h3>
-                    <p className="text-slate-300 text-sm sm:text-base font-medium max-w-md">Funciona no seu WhatsApp Business atual, sem precisar de computador ou conhecimentos técnicos.</p>
+                    <p className="text-slate-300 text-sm sm:text-base font-medium max-w-md">Gerencie tudo de forma visual e intuitiva, com a segurança de uma plataforma pensada para o seu negócio.</p>
                   </div>
                 </div>
               </article>
@@ -387,7 +395,7 @@ const App: React.FC = () => {
                     <h3 className="text-xl sm:text-2xl font-black mb-1.5 sm:mb-2">Essencial</h3>
                     <p className="text-slate-400 text-[10px] sm:text-xs font-bold uppercase tracking-widest">Atendimento Básico</p>
                   </div>
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white shadow-sm flex items-center justify-center text-slate-400 group-hover:text-slate-900 transition-colors" aria-hidden="true">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white shadow-sm flex items-center justify-center text-slate-400 group-hover:text-emerald-500 transition-colors" aria-hidden="true">
                     <Zap size={20} className="sm:w-6 sm:h-6" />
                   </div>
                 </div>
@@ -401,7 +409,7 @@ const App: React.FC = () => {
                   <li className="flex items-center gap-3 text-slate-600 font-bold text-xs sm:text-sm"><Check size={16} className="text-emerald-500 flex-shrink-0" aria-hidden="true" /> Marcação de Horários</li>
                   <li className="flex items-center gap-3 text-slate-600 font-bold text-xs sm:text-sm"><Check size={16} className="text-emerald-500 flex-shrink-0" aria-hidden="true" /> Suporte via WhatsApp</li>
                 </ul>
-                <Button variant="outline" className="mt-auto" href={CONVERSION_URL}>Testar Grátis</Button>
+                <Button variant="outline" className="mt-auto" href={FORM_URL}>Testar Grátis</Button>
               </section>
 
               <section className="p-8 sm:p-10 rounded-3xl sm:rounded-[3.5rem] bg-slate-900 text-white shadow-2xl shadow-emerald-500/10 border-2 border-emerald-500 relative flex flex-col h-full order-first md:order-none">
@@ -412,7 +420,7 @@ const App: React.FC = () => {
                     <p className="text-emerald-400 text-[10px] sm:text-xs font-bold uppercase tracking-widest">Completo</p>
                   </div>
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-white/10 flex items-center justify-center text-emerald-400" aria-hidden="true">
-                    <Sparkles size={20} className="sm:w-6 sm:h-6" />
+                    <Crown size={20} className="sm:w-6 sm:h-6" />
                   </div>
                 </div>
                 <div className="flex items-baseline gap-2 mb-8 sm:mb-10">
@@ -426,7 +434,7 @@ const App: React.FC = () => {
                   <li className="flex items-center gap-3 text-slate-100 font-bold text-xs sm:text-sm"><Check size={16} className="text-emerald-400 flex-shrink-0" aria-hidden="true" /> Histórico de Clientes</li>
                   <li className="flex items-center gap-3 text-slate-100 font-bold text-xs sm:text-sm"><Check size={16} className="text-emerald-400 flex-shrink-0" aria-hidden="true" /> Suporte Prioritário</li>
                 </ul>
-                <Button variant="emerald" className="mt-auto" href={CONVERSION_URL}>Ativar 7 Dias Grátis</Button>
+                <Button variant="emerald" className="mt-auto" href={FORM_URL}>Ativar 7 Dias Grátis</Button>
               </section>
             </div>
           </div>
@@ -459,7 +467,7 @@ const App: React.FC = () => {
                 Junte-se a centenas de profissionais em Angola que já ganharam tempo e clientes com a Fluxora.
               </p>
               <div className="flex flex-col items-center gap-6 sm:gap-8">
-                <Button variant="emerald" className="group px-10 sm:px-16 py-5 sm:py-7 text-base sm:text-xl shadow-2xl shadow-emerald-500/40" href={CONVERSION_URL}>
+                <Button variant="emerald" className="group px-10 sm:px-16 py-5 sm:py-7 text-base sm:text-xl shadow-2xl shadow-emerald-500/40" href={FORM_URL}>
                   Começar agora grátis
                   <ArrowRight size={20} className="sm:w-6 sm:h-6 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                 </Button>
@@ -501,7 +509,7 @@ const App: React.FC = () => {
             <div className="flex flex-col items-center md:items-start">
               <h4 className="font-black text-[10px] sm:text-xs uppercase tracking-[0.2em] mb-4 sm:mb-6 text-slate-400">Contacto</h4>
               <ul className="space-y-3 sm:space-y-4 text-slate-900 font-bold text-xs sm:text-sm tracking-wider">
-                <li><a href={CONVERSION_URL} className="hover:text-emerald-500 transition-colors flex items-center gap-2 justify-center md:justify-start focus:outline-none focus-visible:text-emerald-500"><MessageSquare size={16} aria-hidden="true" /> WhatsApp Suporte</a></li>
+                <li><a href={WHATSAPP_URL} className="hover:text-emerald-500 transition-colors flex items-center gap-2 justify-center md:justify-start focus:outline-none focus-visible:text-emerald-500"><MessageSquare size={16} aria-hidden="true" /> WhatsApp Suporte</a></li>
                 <li className="flex items-center gap-2 justify-center md:justify-start"><Phone size={16} aria-hidden="true" /> Angola</li>
               </ul>
             </div>
@@ -520,7 +528,7 @@ const App: React.FC = () => {
 
       {/* Floating WhatsApp Button */}
       <a 
-        href={CONVERSION_URL} 
+        href={WHATSAPP_URL} 
         target="_blank" 
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-[100] group focus:outline-none focus-visible:ring-4 focus-visible:ring-emerald-500 rounded-2xl"
@@ -565,7 +573,7 @@ const App: React.FC = () => {
             <a href="#planos" onClick={(e) => smoothScroll(e, '#planos')} className="focus:text-emerald-500">Preços</a>
           </nav>
           <div className="mt-auto pt-10">
-            <Button variant="emerald" className="py-5 sm:py-6 w-full text-base sm:text-lg" href={CONVERSION_URL} onClick={() => setIsMenuOpen(false)}>
+            <Button variant="emerald" className="py-5 sm:py-6 w-full text-base sm:text-lg" href={FORM_URL} onClick={() => setIsMenuOpen(false)}>
               Teste Grátis
             </Button>
             <p className="mt-4 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">Início imediato</p>
