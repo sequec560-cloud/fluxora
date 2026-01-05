@@ -9,11 +9,27 @@ export interface NavItem {
 export interface Feature {
   title: string;
   description: string;
-  /* Fix: Import React to access ReactNode namespace */
   icon: React.ReactNode;
+  colorClass?: string;
 }
 
 export interface FAQItem {
-  question: string;
-  answer: string;
+  q: string;
+  a: string;
+}
+
+export interface PricingPlan {
+  name: string;
+  tagline: string;
+  price: string;
+  recommended?: boolean;
+  features: string[];
+  icon: React.ReactNode;
+}
+
+export interface Testimonial {
+  name: string;
+  role: string;
+  content: string;
+  avatar: string;
 }
